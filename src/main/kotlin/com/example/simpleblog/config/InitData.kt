@@ -3,7 +3,8 @@ package com.example.simpleblog.config
 import com.example.simpleblog.domain.member.Member
 import com.example.simpleblog.domain.member.MemberRepository
 import com.example.simpleblog.domain.member.Role
-import io.github.serpro69.kfaker.Faker
+import io.github.serpro69.kfaker.faker
+import mu.KotlinLogging
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.event.EventListener
@@ -12,7 +13,8 @@ import org.springframework.context.event.EventListener
 class InitData(
     private val memberRepository: MemberRepository,
 ) {
-    val faker = Faker()
+    val faker = faker {}
+    private val log = KotlinLogging.logger {}
 
     @EventListener(ApplicationReadyEvent::class)
     private fun init() {
@@ -23,5 +25,7 @@ class InitData(
             role = Role.USER
         )
         memberRepository.save(member)
+
+        log.info { "insert $member" }
     }
 }
