@@ -25,6 +25,14 @@ class Member(
     override fun toString(): String {
         return "Member(email=$email, password=$password, role=$role)"
     }
+
+    companion object {
+        fun createFakeMember(memberId: Long): Member {
+            val member = Member("", "", Role.USER)
+            member.id = memberId
+            return member
+        }
+    }
 }
 
 enum class Role {

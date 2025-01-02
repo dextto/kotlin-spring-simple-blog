@@ -18481,3 +18481,350 @@ HeFormatSql(P6Spy sql,Hibernate format):
 2025-01-02 22:41:19.528 [main] DEBUG org.springframework.boot.availability.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
 2025-01-02 22:41:48.530 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 2025-01-02 22:41:48.531 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:42:18.536 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:42:18.536 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:42:25.611 [http-nio-9000-exec-1]  INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-02 22:42:25.611 [http-nio-9000-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-02 22:42:25.611 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-01-02 22:42:25.611 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-01-02 22:42:25.611 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-01-02 22:42:25.612 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7a0df38e
+2025-01-02 22:42:25.612 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1eda853f
+2025-01-02 22:42:25.612 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-01-02 22:42:25.612 [http-nio-9000-exec-1]  INFO org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-01-02 22:42:25.616 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/members", parameters={}
+2025-01-02 22:42:25.624 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.example.simpleblog.api.MemberController#findAll()
+2025-01-02 22:42:25.634 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.example.simpleblog.service.MemberService.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-01-02 22:42:25.634 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1444824389<open>)] for JPA transaction
+2025-01-02 22:42:25.636 [http-nio-9000-exec-1] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Setting JDBC Connection [com.p6spy.engine.wrapper.ConnectionWrapper@7eba1b5b] read-only
+2025-01-02 22:42:25.636 [http-nio-9000-exec-1] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-01-02 22:42:25.636 [http-nio-9000-exec-1] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2025-01-02 22:42:25.637 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+2025-01-02 22:42:25.638 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+2025-01-02 22:42:25.638 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6d4a07f2]
+2025-01-02 22:42:25.638 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(1444824389<open>)] for JPA transaction
+2025-01-02 22:42:25.638 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-01-02 22:42:25.675 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : m1_0
+2025-01-02 22:42:25.675 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.example.simpleblog.domain.member.Member(1))] with identifierForTableGroup [com.example.simpleblog.domain.member.Member] for NavigablePath [com.example.simpleblog.domain.member.Member] 
+2025-01-02 22:42:25.680 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.example.simpleblog.domain.member.Member(1)]
+ |  +-BasicFetch [com.example.simpleblog.domain.member.Member(1).createdAt]
+ |  +-BasicFetch [com.example.simpleblog.domain.member.Member(1).email]
+ |  +-BasicFetch [com.example.simpleblog.domain.member.Member(1).password]
+ |  +-BasicFetch [com.example.simpleblog.domain.member.Member(1).role]
+ |  \-BasicFetch [com.example.simpleblog.domain.member.Member(1).updatedAt]
+
+2025-01-02 22:42:25.680 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (m1 : com.example.simpleblog.domain.member.Member(1)) {
+          primaryTableReference : `Member` as m1_0
+        }
+      }
+    }
+
+2025-01-02 22:42:25.683 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2025-01-02 22:42:25.684 [http-nio-9000-exec-1] DEBUG org.hibernate.SQL - select m1_0.`id`,m1_0.`createdAt`,m1_0.`email`,m1_0.`password`,m1_0.`role`,m1_0.`updatedAt` from `Member` m1_0
+2025-01-02 22:42:25.684 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select m1_0.`id`,m1_0.`createdAt`,m1_0.`email`,m1_0.`password`,m1_0.`role`,m1_0.`updatedAt` from `Member` m1_0
+2025-01-02 22:42:25.688 [http-nio-9000-exec-1]  INFO p6spy - 25.01.02 22:42:25 | OperationTime : 3ms|
+HeFormatSql(P6Spy sql,Hibernate format):
+    select
+        m1_0.`id`,
+        m1_0.`createdAt`,
+        m1_0.`email`,
+        m1_0.`password`,
+        m1_0.`role`,
+        m1_0.`updatedAt` 
+    from
+        `Member` m1_0
+2025-01-02 22:42:25.691 [http-nio-9000-exec-1] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.example.simpleblog.domain.member.Member(1) -> EntityJoinedFetchInitializer(com.example.simpleblog.domain.member.Member(1))@638116296 (SingleTableEntityPersister(com.example.simpleblog.domain.member.Member))
+
+2025-01-02 22:42:25.699 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-01-02 22:42:25.699 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1444824389<open>)]
+2025-01-02 22:42:25.699 [http-nio-9000-exec-1] DEBUG org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2025-01-02 22:42:25.699 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+2025-01-02 22:42:25.702 [http-nio-9000-exec-1]  INFO p6spy - 25.01.02 22:42:25 | OperationTime : 2ms
+2025-01-02 22:42:25.702 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+2025-01-02 22:42:25.703 [http-nio-9000-exec-1] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 22:42:25.703 [http-nio-9000-exec-1] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Resetting read-only flag of JDBC Connection [com.p6spy.engine.wrapper.ConnectionWrapper@7eba1b5b]
+2025-01-02 22:42:25.703 [http-nio-9000-exec-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1444824389<open>)] after transaction
+2025-01-02 22:42:25.714 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-01-02 22:42:25.714 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [[Member(email=arthur.schmidt@gusikowski-rosenbaum.test, password=1234, role=USER), Member(email=miss (truncated)...]
+2025-01-02 22:42:25.786 [http-nio-9000-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-01-02 22:42:48.542 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:42:48.542 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:43:18.548 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:43:18.548 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:43:48.549 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:43:48.549 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:44:18.553 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:44:18.553 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:44:48.555 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:44:48.555 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:45:18.561 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:45:18.561 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:45:48.566 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:45:48.568 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:46:18.573 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:46:18.574 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:46:48.575 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:46:48.575 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:47:18.577 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:47:18.577 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:47:48.579 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:47:48.580 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:48:18.584 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:48:18.584 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:48:48.585 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:48:48.585 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:49:18.588 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:49:18.588 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:49:48.590 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:49:48.590 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:50:18.595 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:50:18.596 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:50:48.602 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:50:48.602 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:51:18.604 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:51:18.604 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:51:48.609 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:51:48.610 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:52:18.615 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:52:18.616 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:52:48.617 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:52:48.618 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:53:18.628 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:53:18.629 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:53:48.638 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:53:48.639 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:54:18.647 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:54:18.647 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:54:48.656 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:54:48.656 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:55:18.664 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:55:18.664 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:55:48.674 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:55:48.675 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:56:18.685 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:56:18.685 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:56:48.696 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:56:48.696 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:57:18.706 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:57:18.706 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:57:48.714 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:57:48.714 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:58:18.716 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:58:18.717 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:58:48.719 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:58:48.719 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:59:18.718 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:59:18.719 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 22:59:48.727 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 22:59:48.727 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:00:18.732 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:00:18.733 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:00:48.737 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:00:48.737 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:01:18.740 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:01:18.740 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:01:48.742 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:01:48.742 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:02:18.743 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:02:18.743 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:02:48.744 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:02:48.745 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:03:18.746 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:03:18.747 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:03:48.751 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:03:48.752 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:04:18.756 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:04:18.757 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:04:48.761 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:04:48.761 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:05:18.764 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:05:18.765 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:05:48.775 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:05:48.775 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:06:18.783 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:06:18.784 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:06:48.789 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:06:48.790 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:07:18.800 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:07:18.800 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:07:48.805 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:07:48.806 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:08:18.808 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:08:18.809 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:08:48.814 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:08:48.814 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:09:18.817 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:09:18.817 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:09:48.823 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:09:48.823 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:10:18.828 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:18.829 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:10:33.997 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@71d545a: (connection has passed maxLifetime)
+2025-01-02 23:10:34.013 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:10:34.014 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:10:34.015 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1dc984bc
+2025-01-02 23:10:34.050 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:35.626 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@78d47d70: (connection has passed maxLifetime)
+2025-01-02 23:10:35.638 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:10:35.638 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:10:35.638 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:10:35.638 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:10:35.638 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:10:35.639 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:10:35.639 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:10:35.639 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:10:35.640 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@48ce2f11
+2025-01-02 23:10:35.672 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:40.305 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@26c03adc: (connection has passed maxLifetime)
+2025-01-02 23:10:40.314 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:10:40.315 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:10:40.317 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7dc1c69e
+2025-01-02 23:10:40.351 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:40.847 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@21c67a8f: (connection has passed maxLifetime)
+2025-01-02 23:10:40.854 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:10:40.854 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:10:40.855 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:10:40.856 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@6a51540f
+2025-01-02 23:10:40.888 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:48.830 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:10:48.830 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:10:53.892 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@7da80764: (connection has passed maxLifetime)
+2025-01-02 23:10:53.898 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:10:53.898 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:10:53.899 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:10:53.900 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3a08eddb
+2025-01-02 23:10:53.931 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:02.858 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@281ada42: (connection has passed maxLifetime)
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:11:02.873 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:11:02.875 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2e1df8d9
+2025-01-02 23:11:02.906 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:03.872 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@9fbb190: (connection has passed maxLifetime)
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:11:03.883 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:11:03.884 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:11:03.886 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3ffa61e6
+2025-01-02 23:11:03.921 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:05.303 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@740c3004: (connection has passed maxLifetime)
+2025-01-02 23:11:05.317 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:11:05.317 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:11:05.317 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:11:05.317 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:11:05.317 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:11:05.318 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:11:05.318 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:11:05.318 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:11:05.319 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3f7ed3b8
+2025-01-02 23:11:05.354 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:05.835 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@50f3ba6a: (connection has passed maxLifetime)
+2025-01-02 23:11:05.848 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:11:05.849 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:11:05.851 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@54245f3c
+2025-01-02 23:11:05.886 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:06.623 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@543af34f: (connection has passed maxLifetime)
+2025-01-02 23:11:06.633 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  time_zone = SYSTEM
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  redirect_url = 
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'kotlinblog'
+2025-01-02 23:11:06.634 [HikariPool-1 connection adder] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',transaction_isolation')
+2025-01-02 23:11:06.637 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@10b9daa5
+2025-01-02 23:11:06.670 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:18.834 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:18.834 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:11:48.839 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:11:48.840 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:12:18.845 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:12:18.845 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:12:48.850 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:12:48.850 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:13:18.860 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:13:18.861 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:13:48.871 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:13:48.871 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:14:18.881 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:14:18.882 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:14:48.892 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:14:48.892 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:15:18.900 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:15:18.900 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:15:48.910 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:15:48.911 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2025-01-02 23:15:49.532 [SpringApplicationShutdownHook] DEBUG org.springframework.boot.availability.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2025-01-02 23:15:49.532 [SpringApplicationShutdownHook] DEBUG org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e9fda69, started on Thu Jan 02 22:41:17 KST 2025
+2025-01-02 23:15:49.533 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 2147482623
+2025-01-02 23:15:49.534 [SpringApplicationShutdownHook]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-02 23:15:49.538 [tomcat-shutdown]  INFO org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-01-02 23:15:49.538 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 2147481599
+2025-01-02 23:15:49.538 [tomcat-shutdown] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+2025-01-02 23:15:49.539 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Bean 'webServerStartStop' completed its stop procedure
+2025-01-02 23:15:49.539 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase 1073741823
+2025-01-02 23:15:49.539 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Bean 'applicationTaskExecutor' completed its stop procedure
+2025-01-02 23:15:49.539 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Stopping beans in phase -2147483647
+2025-01-02 23:15:49.539 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor - Bean 'springBootLoggingLifecycle' completed its stop procedure
+2025-01-02 23:15:49.540 [SpringApplicationShutdownHook] DEBUG org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-01-02 23:15:49.540 [SpringApplicationShutdownHook]  INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-02 23:15:49.540 [SpringApplicationShutdownHook] DEBUG org.hibernate.internal.SessionFactoryImpl - HHH000031: Closing
+2025-01-02 23:15:49.541 [SpringApplicationShutdownHook] DEBUG org.hibernate.type.spi.TypeConfiguration$Scope - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@284c56ad] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@45302e66]
+2025-01-02 23:15:49.541 [SpringApplicationShutdownHook] DEBUG org.hibernate.service.internal.AbstractServiceRegistryImpl - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2025-01-02 23:15:49.541 [SpringApplicationShutdownHook] DEBUG org.hibernate.boot.registry.internal.BootstrapServiceRegistryImpl - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2025-01-02 23:15:49.541 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-02 23:15:49.541 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2025-01-02 23:15:49.542 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@1dc984bc: (connection evicted)
+2025-01-02 23:15:49.543 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@48ce2f11: (connection evicted)
+2025-01-02 23:15:49.544 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@7dc1c69e: (connection evicted)
+2025-01-02 23:15:49.544 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@6a51540f: (connection evicted)
+2025-01-02 23:15:49.544 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@3a08eddb: (connection evicted)
+2025-01-02 23:15:49.545 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@2e1df8d9: (connection evicted)
+2025-01-02 23:15:49.545 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@3ffa61e6: (connection evicted)
+2025-01-02 23:15:49.546 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@3f7ed3b8: (connection evicted)
+2025-01-02 23:15:49.547 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@54245f3c: (connection evicted)
+2025-01-02 23:15:49.548 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.mariadb.jdbc.Connection@10b9daa5: (connection evicted)
+2025-01-02 23:15:49.549 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2025-01-02 23:15:49.549 [SpringApplicationShutdownHook]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
