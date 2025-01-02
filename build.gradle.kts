@@ -30,6 +30,10 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.serpro69/kotlin-faker
     implementation("io.github.serpro69:kotlin-faker:1.16.0")
 
+    // https://mvnrepository.com/artifact/com.github.gavlyukovskiy/p6spy-spring-boot-starter
+    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.10.0")
+
+
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")
 //	implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
