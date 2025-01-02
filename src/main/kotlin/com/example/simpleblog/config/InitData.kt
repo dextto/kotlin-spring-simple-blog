@@ -18,7 +18,6 @@ class InitData(
 
     @EventListener(ApplicationReadyEvent::class)
     private fun init() {
-
         val member = Member(
             email = faker.internet.safeEmail(),
             password = "1234",

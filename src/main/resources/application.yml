@@ -22,6 +22,9 @@ spring:
         default_batch_fetch_size1: 1000
         globally_quoted_identifiers: true
     show-sql: true
+  output:
+    ansi:
+      enabled: always
 
 #decorator:
 #  datasource:
