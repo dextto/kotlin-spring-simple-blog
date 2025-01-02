@@ -17,12 +17,19 @@ java {
 }
 
 repositories {
+//    google()
     mavenCentral()
 }
 
 extra["snippetsDir"] = file("build/generated-snippets")
 
 dependencies {
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+//    implementation("com.github.javafaker:javafaker:1.0.2")
+
+    // https://mvnrepository.com/artifact/io.github.serpro69/kotlin-faker
+    implementation("io.github.serpro69:kotlin-faker:1.16.0")
+
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")
 //	implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
