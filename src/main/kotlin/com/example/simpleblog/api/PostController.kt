@@ -5,6 +5,7 @@ import com.example.simpleblog.domain.post.PostRes
 import com.example.simpleblog.domain.post.PostSaveReq
 import com.example.simpleblog.service.PostService
 import com.example.simpleblog.util.value.CmResDto
+import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
@@ -41,7 +42,7 @@ class PostController(
     }
 
     @PostMapping("posts")
-    fun save(@RequestBody dto: PostSaveReq): CmResDto<Post> {
+    fun save(@Valid @RequestBody dto: PostSaveReq): CmResDto<Post> {
         return CmResDto(
             HttpStatus.CREATED.toString(),
             "Post Created",

@@ -5,6 +5,7 @@ import com.example.simpleblog.domain.member.MemberRes
 import com.example.simpleblog.domain.member.MemberSaveReq
 import com.example.simpleblog.service.MemberService
 import com.example.simpleblog.util.value.CmResDto
+import jakarta.validation.Valid
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -41,7 +42,7 @@ class MemberController(
     }
 
     @PostMapping("members")
-    fun save(@RequestBody dto: MemberSaveReq): CmResDto<Member> {
+    fun save(@Valid @RequestBody dto: MemberSaveReq): CmResDto<Member> {
         return CmResDto(
             HttpStatus.CREATED.toString(),
             "Member Created",
