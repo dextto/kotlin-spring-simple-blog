@@ -13,6 +13,6 @@ class MemberService(
     @Transactional(readOnly = true)
     fun findAll(): List<MemberRes> =
         memberRepository
-            .findAll()
+            .findMembers()
             .map { it.toDto() }
 }

@@ -37,7 +37,10 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 
     // https://mvnrepository.com/artifact/com.linecorp.kotlin-jdsl/spring-data-kotlin-jdsl-starter
-//    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter:2.2.1.RELEASE")
+//    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter:2.0.4.RELEASE")
+    implementation("com.linecorp.kotlin-jdsl:jpql-dsl:3.5.4")
+    implementation("com.linecorp.kotlin-jdsl:jpql-render:3.5.4")
+    implementation("com.linecorp.kotlin-jdsl:spring-data-jpa-support:3.5.4")
 
 
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")
