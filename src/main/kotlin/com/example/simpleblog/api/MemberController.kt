@@ -14,7 +14,7 @@ class MemberController(
     fun findAll(): CmResDto<*> {
         return CmResDto(
             HttpStatus.OK.toString(),
-            "Found all memebers",
+            "Found all members",
             memberService.findAll(),
         )
     }
