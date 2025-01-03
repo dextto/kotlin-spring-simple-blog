@@ -10,13 +10,18 @@ import jakarta.persistence.*
 class Comment(
     content: String,
     post: Post,
+    member: Member,
 ) : AuditingEntity() {
 
     @Column(name = "content", nullable = false)
     var content: String = content
         protected set
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Member::class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Post::class)
     var post: Post = post
+        protected set
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Member::class)
+    var member: Member = member
         protected set
 }
