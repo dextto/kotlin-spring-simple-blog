@@ -6,6 +6,7 @@ import com.example.simpleblog.domain.post.PostSaveReq
 import com.example.simpleblog.service.PostService
 import com.example.simpleblog.util.value.CmResDto
 import jakarta.validation.Valid
+import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
@@ -15,11 +16,11 @@ class PostController(
 ) {
 
     @GetMapping("posts")
-    fun getPosts(): CmResDto<*> {
+    fun getPosts(pageable: Pageable): CmResDto<*> {
         return CmResDto(
             HttpStatus.OK.toString(),
             "Found posts",
-            postService.findPosts()
+            postService.findPosts(pageable)
         )
     }
 
