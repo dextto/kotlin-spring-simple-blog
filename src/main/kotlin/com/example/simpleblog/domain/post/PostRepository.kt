@@ -19,6 +19,7 @@ class PostCustomRepositoryImpl(
                 entity(Post::class),
             ).from(
                 entity(Post::class),
+                fetchJoin(Post::member),
             ).orderBy(
                 path(Post::id).desc(),
             )
