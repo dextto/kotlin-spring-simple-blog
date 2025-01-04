@@ -1,7 +1,9 @@
 package com.example.simpleblog.config.app
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import mu.KotlinLogging
 import org.aspectj.lang.JoinPoint
+import org.aspectj.lang.annotation.AfterReturning
 import org.aspectj.lang.annotation.Aspect
 import org.aspectj.lang.annotation.Before
 import org.aspectj.lang.annotation.Pointcut
@@ -33,6 +35,19 @@ class LoggerAspect {
             request url: ${request.servletPath}
             type: $typeName
             methodName: $methodName
+            """.trimIndent()
+        }
+    }
+
+    @AfterReturning(pointcut = "controllerCut()", returning = "result")
+    fun controllerLogAfter(joinpoint: JoinPoint, result: Any) {
+        // TODO: 응답 로그 컨버팅 개선
+        val mapper = ObjectMapper()
+
+        log.info {
+            """
+            ${joinpoint.signature.name}
+            Method return value: ${mapper.writeValueAsString(result)}"
             """.trimIndent()
         }
     }
