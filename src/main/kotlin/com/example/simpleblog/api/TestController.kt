@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController
 class TestController(
 
 ) {
-    @GetMapping("health")
+    @GetMapping("/health")
     fun healthTest(): String {
         return "health check"
     }
