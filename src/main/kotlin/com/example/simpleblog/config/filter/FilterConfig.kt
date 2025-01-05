@@ -1,7 +1,6 @@
 package com.example.simpleblog.config.filter
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
@@ -10,7 +9,7 @@ class FilterConfig {
      * TODO: 필터 시큐리티 적용
      */
 
-    @Bean
+//    @Bean
     fun registerAuthenticationFilter(): FilterRegistrationBean<AuthenticationFilter?> {
         val bean = FilterRegistrationBean(AuthenticationFilter())
         bean.addUrlPatterns("/members/*")
