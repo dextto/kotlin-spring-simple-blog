@@ -17,7 +17,7 @@ class MemberService(
             .map { it.toDto() }
 
     @Transactional
-    fun saveMember(dto: MemberSaveReq): Member {
+    fun saveMember(dto: LoginDto): Member {
         return memberRepository.save(dto.toEntity())
     }
 
@@ -28,6 +28,6 @@ class MemberService(
 
     @Transactional
     fun findMemberById(id: Long): MemberRes {
-        return memberRepository.findById(id).orElseThrow { throw MemberNotFoundException(id) }.toDto()
+        return memberRepository.findById(id).orElseThrow { throw MemberNotFoundException(id.toString()) }.toDto()
     }
 }

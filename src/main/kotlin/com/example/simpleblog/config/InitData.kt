@@ -39,7 +39,7 @@ class InitData(
         return members
     }
 
-    private fun generateMember() = MemberSaveReq(
+    private fun generateMember() = LoginDto(
         email = faker.internet.safeEmail(),
         password = "1234",
         role = Role.USER,

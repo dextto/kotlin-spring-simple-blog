@@ -1,8 +1,8 @@
 package com.example.simpleblog.api
 
+import com.example.simpleblog.domain.member.LoginDto
 import com.example.simpleblog.domain.member.Member
 import com.example.simpleblog.domain.member.MemberRes
-import com.example.simpleblog.domain.member.MemberSaveReq
 import com.example.simpleblog.service.MemberService
 import com.example.simpleblog.util.value.CmResDto
 import jakarta.validation.Valid
@@ -43,7 +43,7 @@ class MemberController(
     }
 
     @PostMapping
-    fun save(@Valid @RequestBody dto: MemberSaveReq): CmResDto<Member> {
+    fun save(@Valid @RequestBody dto: LoginDto): CmResDto<Member> {
         return CmResDto(
             HttpStatus.CREATED.toString(),
             "Member Created",
