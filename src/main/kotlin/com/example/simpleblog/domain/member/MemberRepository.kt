@@ -9,7 +9,7 @@ interface MemberRepository : JpaRepository<Member, Long>, MemberCustomRepository
 
 interface MemberCustomRepository {
     fun findMembers(pageable: Pageable): List<Member>
-    fun findMemberByEmail(email: String): Member?
+    fun findMemberByEmail(email: String): Member
 }
 
 class MemberCustomRepositoryImpl(
@@ -27,7 +27,7 @@ class MemberCustomRepositoryImpl(
         }.filterNotNull()
     }
 
-    override fun findMemberByEmail(email: String): Member? {
+    override fun findMemberByEmail(email: String): Member {
         return kotlinJdslJpqlExecutor.findAll {
             select(
                 entity(Member::class),
@@ -36,6 +36,6 @@ class MemberCustomRepositoryImpl(
             ).where(
                 path(Member::email).eq(email)
             )
-        }.firstOrNull()
+        }.first()!!
     }
 }

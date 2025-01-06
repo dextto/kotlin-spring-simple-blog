@@ -5,25 +5,29 @@ import com.auth0.jwt.algorithms.Algorithm
 import mu.KotlinLogging
 import java.util.*
 
-class JwtManager {
-    private val log = KotlinLogging.logger { }
+const val JWT_HEADER = "Authorization"
+const val AUTH_TYPE = "Bearer"
 
-    // TODO: env
-    private val secretKey: String = "SECRET!!"
-    private val claimEmail: String = "email"
-    private val claimPassword: String = "password"
+// TODO: env
+const val SECRET_KEY = "SECRET!!"
+const val CLAIM_EMAIL: String = "email"
+const val CLAIM_PASSWORD: String = "password"
+
+class JwtManager {
+
+    private val log = KotlinLogging.logger { }
 
     fun generateAccessToken(principal: PrincipalDetails): String {
         return JWT.create()
             .withSubject(principal.username)
             .withExpiresAt(Date(System.nanoTime() + 1000 * 60 * 60))
-            .withClaim(claimEmail, principal.username)
-            .withClaim(claimPassword, principal.password)
-            .sign(Algorithm.HMAC512(secretKey))
+            .withClaim(CLAIM_EMAIL, principal.username)
+            .withClaim(CLAIM_PASSWORD, principal.password)
+            .sign(Algorithm.HMAC512(SECRET_KEY))
             .toString()
     }
 
     fun getMemberEmail(token: String): String? {
-        return JWT.require(Algorithm.HMAC512(secretKey)).build().verify(token).getClaim(claimEmail).asString()
+        return JWT.require(Algorithm.HMAC512(SECRET_KEY)).build().verify(token).getClaim(CLAIM_EMAIL).asString()
     }
 }

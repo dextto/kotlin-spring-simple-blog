@@ -1,5 +1,6 @@
 package com.example.simpleblog.config.security
 
+import com.example.simpleblog.domain.member.MemberRepository
 import com.fasterxml.jackson.databind.ObjectMapper
 import mu.KotlinLogging
 import org.springframework.context.annotation.Bean
@@ -21,6 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 class SecurityConfig(
     private val authenticationConfiguration: AuthenticationConfiguration,
     private val objectMapper: ObjectMapper, // 이미 bean으로 등록되어 있음
+    private val memberRepository: MemberRepository,
 ) {
     private val log = KotlinLogging.logger { }
 
@@ -32,17 +34,6 @@ class SecurityConfig(
 
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain? {
-        // TODO: fix deprecated
-        // http
-        //     .csrf().disable()
-        //     .headers().frameOptions().disable()
-        //     .and()
-        //     .formLogin().disable()
-        //     .httpBasic().disable()
-        //     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)  // JWT를 사용하므로
-        //     .and()
-        //     .cors().configurationSource(corsConfig())
-
         http
             .csrf { it.disable() }
             .headers { headers -> headers.frameOptions { it.disable() } }
@@ -51,8 +42,17 @@ class SecurityConfig(
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }  // JWT를 사용하므로
             .cors { it.configurationSource(corsConfig()) }
             .addFilter(loginFilter())
+            .addFilter(authenticationFilter())
 
         return http.build()
+    }
+
+    @Bean
+    fun authenticationFilter(): CustomBasicAuthenticationFilter {
+        return CustomBasicAuthenticationFilter(
+            authenticationManager = authenticationManager(),
+            memberRepository = memberRepository,
+        )
     }
 
     @Bean
