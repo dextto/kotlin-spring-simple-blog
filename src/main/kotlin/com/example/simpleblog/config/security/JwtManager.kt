@@ -5,7 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm
 import mu.KotlinLogging
 import java.util.*
 
-const val JWT_HEADER = "Authorization"
+const val AUTH_HEADER = "Authorization"
 const val AUTH_TYPE = "Bearer"
 
 // TODO: env

@@ -56,8 +56,13 @@ class SecurityConfig(
                 it.accessDeniedHandler(CustomAccessDeniedHandler())
                 it.authenticationEntryPoint(CustomAuthenticationEntryPoint())
             }
-            .authorizeHttpRequests { it.anyRequest().permitAll() }  // TODO: 임시로 인증 안함
-//            .authorizeHttpRequests { it.requestMatchers("/**").authenticated() }
+            .authorizeHttpRequests {
+                // NOTE: 순서대로 적용된다
+                it.requestMatchers("/v1/posts").hasAnyRole("USER", "ADMIN")
+
+                it.anyRequest().permitAll()  // TODO: 임시로 인증 안함
+//            it.requestMatchers("/**").authenticated()
+            }
 
         return http.build()
     }
@@ -73,7 +78,7 @@ class SecurityConfig(
         ) {
             log.info { "authentication required!!!" }  // TODO: 왜 여기를 2번 타는지 확인
 //            response?.sendError(HttpStatus.UNAUTHORIZED.value(), HttpStatus.UNAUTHORIZED.reasonPhrase)
-            response?.sendError(HttpServletResponse.SC_UNAUTHORIZED)
+            response?.sendError(HttpServletResponse.SC_FORBIDDEN)
         }
     }
 
@@ -87,7 +92,7 @@ class SecurityConfig(
         ) {
             log.info { "로그인 실패!!" }
 
-            response?.sendError(HttpServletResponse.SC_FORBIDDEN, "인증 실패")
+            response?.sendError(HttpServletResponse.SC_UNAUTHORIZED, "인증 실패")
         }
     }
 
@@ -114,7 +119,7 @@ class SecurityConfig(
         ) {
             log.info { "access denied!!!" }
 
-            response?.sendError(HttpServletResponse.SC_UNAUTHORIZED)
+            response?.sendError(HttpServletResponse.SC_FORBIDDEN)
         }
     }
 
