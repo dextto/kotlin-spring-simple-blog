@@ -56,7 +56,8 @@ class SecurityConfig(
                 it.accessDeniedHandler(CustomAccessDeniedHandler())
                 it.authenticationEntryPoint(CustomAuthenticationEntryPoint())
             }
-            .authorizeHttpRequests { it.requestMatchers("/**").authenticated() }
+            .authorizeHttpRequests { it.anyRequest().permitAll() }  // TODO: 임시로 인증 안함
+//            .authorizeHttpRequests { it.requestMatchers("/**").authenticated() }
 
         return http.build()
     }
