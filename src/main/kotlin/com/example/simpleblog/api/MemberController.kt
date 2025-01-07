@@ -10,12 +10,12 @@ import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
-@RequestMapping("/members")
+@RequestMapping("/v1")
 @RestController
 class MemberController(
     private val memberService: MemberService,
 ) {
-    @GetMapping
+    @GetMapping("/members")
     fun findAll(pageable: Pageable): CmResDto<*> {
         return CmResDto(
             HttpStatus.OK.toString(),
@@ -24,7 +24,7 @@ class MemberController(
         )
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/members/{id}")
     fun findById(@PathVariable id: Long): CmResDto<MemberRes> {
         return CmResDto(
             HttpStatus.OK.toString(),
@@ -33,7 +33,7 @@ class MemberController(
         )
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/members/{id}")
     fun deleteById(@PathVariable id: Long): CmResDto<Unit> {
         return CmResDto(
             HttpStatus.NO_CONTENT.toString(),
@@ -42,7 +42,7 @@ class MemberController(
         )
     }
 
-    @PostMapping
+    @PostMapping("/members")
     fun save(@Valid @RequestBody dto: LoginDto): CmResDto<Member> {
         return CmResDto(
             HttpStatus.CREATED.toString(),

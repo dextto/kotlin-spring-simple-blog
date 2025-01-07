@@ -10,13 +10,13 @@ import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
-@RequestMapping("/posts")
+@RequestMapping("/v1")
 @RestController
 class PostController(
     private val postService: PostService,
 ) {
 
-    @GetMapping
+    @GetMapping("/posts")
     fun getPosts(pageable: Pageable): CmResDto<*> {
         return CmResDto(
             HttpStatus.OK.toString(),
@@ -25,7 +25,7 @@ class PostController(
         )
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/posts/{id}")
     fun findById(@PathVariable id: Long): CmResDto<PostRes> {
         return CmResDto(
             HttpStatus.OK.toString(),
@@ -34,7 +34,7 @@ class PostController(
         )
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/posts/{id}")
     fun deleteById(@PathVariable id: Long): CmResDto<Unit> {
         return CmResDto(
             HttpStatus.NO_CONTENT.toString(),
@@ -43,7 +43,7 @@ class PostController(
         )
     }
 
-    @PostMapping
+    @PostMapping("/posts")
     fun save(@Valid @RequestBody dto: PostSaveReq): CmResDto<Post> {
         return CmResDto(
             HttpStatus.CREATED.toString(),

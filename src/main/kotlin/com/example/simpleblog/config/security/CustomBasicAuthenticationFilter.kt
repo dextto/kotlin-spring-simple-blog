@@ -24,7 +24,9 @@ class CustomBasicAuthenticationFilter(
 
         val token = request.getHeader(JWT_HEADER)?.replace("$AUTH_TYPE ", "")
         if (token == null) {
-            throw RuntimeException("토큰이 필요합니다")
+            log.error { "토큰이 필요합니다" }
+            chain.doFilter(request, response)
+            return
         }
 
         val email = jwtManager.getMemberEmail(token) ?: throw RuntimeException("토큰에 이메일이 없습니다.")
@@ -33,6 +35,7 @@ class CustomBasicAuthenticationFilter(
         val authentication: Authentication = UsernamePasswordAuthenticationToken(
             principalDetails,
             principalDetails.password,
+            principalDetails.authorities,  // NOTE: password의 평문과 암호문을 비교하기 위해 필요
         )
         SecurityContextHolder.getContext().authentication = authentication
 

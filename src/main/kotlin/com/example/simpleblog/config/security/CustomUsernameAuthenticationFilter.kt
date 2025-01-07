@@ -25,7 +25,7 @@ class CustomUsernameAuthenticationFilter(
             loginDto = objectMapper.readValue(request?.inputStream, LoginDto::class.java)
             log.info { "loginDto: $loginDto" }
         } catch (e: Exception) {
-            log.error { "loginFilter: 로그인 요청 Dto 생성 실패!   $e" }
+            log.error { "loginFilter: 로그인 요청 Dto 생성 실패!   ${e.stackTraceToString()}" }
         }
         val authenticationToken = UsernamePasswordAuthenticationToken(loginDto.email, loginDto.password)
 
@@ -41,11 +41,7 @@ class CustomUsernameAuthenticationFilter(
         log.info { "로그인 완료되어서 JWT를 만들고 response 생성" }
 
         val principalDetails = authResult?.principal as PrincipalDetails
-
         val jwtToken = jwtManager.generateAccessToken(principalDetails)
-
-        log.info { "jwtToken: $jwtToken" }
-
         response?.addHeader(JWT_HEADER, "$AUTH_TYPE $jwtToken")
     }
 }
