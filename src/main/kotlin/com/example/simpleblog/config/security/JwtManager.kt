@@ -4,23 +4,27 @@ import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
 import mu.KotlinLogging
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 const val AUTH_HEADER = "Authorization"
 const val AUTH_TYPE = "Bearer"
 
 // TODO: env
 const val SECRET_KEY = "SECRET!!"
-const val CLAIM_EMAIL: String = "email"
-const val CLAIM_PASSWORD: String = "password"
+const val CLAIM_EMAIL = "email"
+const val CLAIM_PASSWORD = "password"
+const val ACCESS_TOKEN_EXPIRE_MINUTES: Long = 5
 
 class JwtManager {
 
     private val log = KotlinLogging.logger { }
 
     fun generateAccessToken(principal: PrincipalDetails): String {
+        val expireDate = Date(System.nanoTime() + TimeUnit.MINUTES.toMillis(ACCESS_TOKEN_EXPIRE_MINUTES))
+
         return JWT.create()
             .withSubject(principal.username)
-            .withExpiresAt(Date(System.nanoTime() + 1000 * 60 * 60))
+            .withExpiresAt(expireDate)
             .withClaim(CLAIM_EMAIL, principal.username)
             .withClaim(CLAIM_PASSWORD, principal.password)
             .sign(Algorithm.HMAC512(SECRET_KEY))
