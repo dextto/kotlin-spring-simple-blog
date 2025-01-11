@@ -1,12 +1,15 @@
 package com.example.simpleblog.config.security
 
+
 import com.example.simpleblog.domain.member.Member
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import mu.KotlinLogging
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
+@JsonIgnoreProperties("authorities")   // TODO: 역직렬화 안되는 이슈 수정
 class PrincipalDetails(
-    member: Member,
+    member: Member = Member.createFakeMember(0),
 ) : UserDetails {
     var member: Member = member
         private set
@@ -20,6 +23,7 @@ class PrincipalDetails(
         authorities.add(GrantedAuthority { "ROLE_${member.role}" })
 
         return authorities
+
     }
 
     override fun getPassword(): String? {
@@ -30,3 +34,4 @@ class PrincipalDetails(
         return member.email
     }
 }
+

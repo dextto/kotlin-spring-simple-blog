@@ -6,10 +6,11 @@ import jakarta.persistence.*
 @Entity
 @Table
 class Member(
+    id: Long = 0,
     email: String,
     password: String,
-    role: Role,
-) : AuditingEntity() {
+    role: Role = Role.USER,
+) : AuditingEntity(id) {
     @Column(name = "email", nullable = false)
     var email: String = email
         protected set
@@ -28,16 +29,14 @@ class Member(
 
     companion object {
         fun createFakeMember(memberId: Long): Member {
-            val member = Member("", "", Role.USER)
-            member.id = memberId
-            return member
+            return Member(memberId, "test@test.com", "1234")
         }
     }
 }
 
 fun Member.toDto(): MemberRes {
     return MemberRes(
-        id = this.id!!,
+        id = this.id,
         email = this.email,
         password = this.password,
         role = this.role,
